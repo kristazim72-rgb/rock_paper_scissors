@@ -33,6 +33,24 @@ function playRound(humanChoice, computerChoice){
 }
 
 function playGame(){
+    let running = true;
+
+    while(running){
+       const humanSelection = getHumanChoice();
+       const computerSelection = getComputerChoice();
+
+       const result = playRound(humanSelection, computerSelection);
+
+       alert(`You chose: ${humanSelection}\nComputer chose: ${computerSelection}\n\n Result: ${result}`);
+
+       const playAgain = prompt("Type 'quit' to exit or Enter to play again: ");
+
+       if(playAgain && playAgain.toLowerCase() === "quit"){
+        running = false;
+       }
+    }
+
+    alert("Thanks for playing!")
     
 }
 
